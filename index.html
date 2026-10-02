@@ -1,0 +1,74 @@
+<!-- ////////////////////////////////////////////////////////////////mycode/////////////////////////////////////////////////////////////// -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 - Audio Captcha, Visualisation & Voice Control</title>
+    
+    <!--libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js"></script>
+    
+    <!--Meyda audio library -->
+    <script src="https://unpkg.com/meyda@5.0.0/dist/web/meyda.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Exercise 2: Intelligent Signal Processing</h1>
+    
+    <!-- audio captcha -->
+    <div id="audio-captcha">
+        <h2>Task 2.1: Audio Captcha</h2>
+        <p>Listen to the scrambled audio and enter what you hear:</p>
+        <canvas id="waveformCanvas" width="600" height="60"></canvas>
+        <button id="play-btn">Play Audio</button>
+        
+        <label for="captcha-input">Enter your answer: </label>
+        <input type="text" id="captcha-input" placeholder="Type what you hear...">
+        <button id="submit-btn">Submit</button>
+        <button id="regenerate-btn">Regenerate Captcha</button>
+        <p id="captcha-result"></p>
+    </div>
+
+    <!--audio visualisation-->
+    <div id="visualisation">
+        <h2>Task 2.2: Audio Visualisation with Meyda</h2>
+        <p>Select a sound file and visualize its audio features:</p>
+        
+        <div style="margin: 15px 0;">
+            <button id="sound1-btn" class="sound-btn">Sound 1 </button>
+            <button id="sound2-btn" class="sound-btn">Sound 2 </button>
+            <button id="sound3-btn" class="sound-btn">Sound 3 </button>
+        </div>
+        
+        <p id="current-sound-display" style="font-weight: bold; color: #3498db;">Selected: Sound 1 </p>
+        
+        <button id="start-visualisation-btn">Start Visualisation</button>
+    </div>
+
+    <!--voicecontroller-->
+    <div id="voice-controller">
+        <h2>Task 2.3: Voice Controller</h2>
+        <p>Control visualization using voice commands:</p>
+        <ul>
+            <li><strong>Colors:</strong> Say "Red", "Blue", "Green", "Black", or "White"</li>
+            <li><strong>Shapes:</strong> Say "Circle", "Square", "Triangle", or "Pentagon"</li>
+        </ul>
+        <button id="start-voice-control">Start Voice Control</button>
+        <p style="font-size: 12px; color: #666;">
+            Note: Voice recognition requires microphone permission. The browser may prompt you to allow access.
+        </p>
+    </div>
+
+    <!--javaScript files -->
+    <script src="captcha.js"></script>
+    <script src="visualisation.js"></script>
+    <script src="voiceControl.js"></script>
+    <script src="sketch.js"></script>
+    
+</body>
+</html>
+<!-- ////////////////////////////////////////////////////////////////mycode/////////////////////////////////////////////////////////////// -->
